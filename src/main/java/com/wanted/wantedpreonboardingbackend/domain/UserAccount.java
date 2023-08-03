@@ -1,12 +1,14 @@
 package com.wanted.wantedpreonboardingbackend.domain;
 
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 
 @Getter
 @ToString(callSuper = true)
@@ -18,6 +20,7 @@ public class UserAccount {
     @Column(length = 50,name = "user_id", unique = true)
     private long id;
 
+    @Setter
     @Column(length = 100, name = "email" ,unique = true)
     private String email;
 
