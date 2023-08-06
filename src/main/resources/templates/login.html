@@ -1,0 +1,17 @@
+</head>
+<body>
+<div class="container">
+    <div th:replace="fragments/bodyHeader :: bodyHeader" />
+<form>
+    <label for="email">Email</label>
+    <input id="email" type="email" placeholder="you@example.com">
+    <label for="password">Password</label>
+    <input id="password" type="password" required>
+    <button type="submit">가입</button>
+    </form>
+    </div>
+    </div>
+    <div th:replace="fragments/footer :: footer" />
+</div> <!-- /container -->
+</body>
+</html>

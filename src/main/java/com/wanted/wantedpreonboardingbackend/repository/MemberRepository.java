@@ -1,12 +1,11 @@
 package com.wanted.wantedpreonboardingbackend.repository;
-
-import com.wanted.wantedpreonboardingbackend.domain.UserAccount;
+import com.wanted.wantedpreonboardingbackend.domain.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 @Repository
-public interface UserRepository extends JpaRepository<UserAccount,Long> {
+public interface MemberRepository extends JpaRepository<Member,Long> {
 
-    Optional<UserAccount> findByEmail(String email);
+    Member findByEmail(String email);
 }

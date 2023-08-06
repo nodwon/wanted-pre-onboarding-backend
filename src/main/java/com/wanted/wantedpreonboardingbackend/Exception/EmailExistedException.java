@@ -2,6 +2,6 @@ package com.wanted.wantedpreonboardingbackend.Exception;
 
 public class EmailExistedException extends RuntimeException {
     public EmailExistedException(String email) {
-        super("Email is Wrong");
+        super("@포함되어있지 않습니다.");
     }
 }

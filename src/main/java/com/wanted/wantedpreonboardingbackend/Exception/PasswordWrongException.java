@@ -2,7 +2,7 @@ package com.wanted.wantedpreonboardingbackend.Exception;
 
 public class PasswordWrongException extends RuntimeException {
     public PasswordWrongException(){
-        super("Password is Wrong");
+        super("8자리이상이 아닙니다.");
     }
 
 }

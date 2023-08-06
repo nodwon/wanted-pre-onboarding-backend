@@ -11,44 +11,44 @@ import com.querydsl.core.types.dsl.PathInits;
 
 
 /**
- * Qarticle is a Querydsl query type for article
+ * QArticle is a Querydsl query type for Article
  */
 @Generated("com.querydsl.codegen.DefaultEntitySerializer")
-public class Qarticle extends EntityPathBase<article> {
+public class QArticle extends EntityPathBase<Article> {
 
-    private static final long serialVersionUID = -1313892829L;
+    private static final long serialVersionUID = 350760451L;
 
     private static final PathInits INITS = PathInits.DIRECT2;
 
-    public static final Qarticle article = new Qarticle("article");
+    public static final QArticle article = new QArticle("article");
 
     public final StringPath content = createString("content");
 
     public final NumberPath<Long> id = createNumber("id", Long.class);
 
+    public final QMember member;
+
     public final StringPath title = createString("title");
 
-    public final QUserAccount userAccount;
-
-    public Qarticle(String variable) {
-        this(article.class, forVariable(variable), INITS);
+    public QArticle(String variable) {
+        this(Article.class, forVariable(variable), INITS);
     }
 
-    public Qarticle(Path<? extends article> path) {
+    public QArticle(Path<? extends Article> path) {
         this(path.getType(), path.getMetadata(), PathInits.getFor(path.getMetadata(), INITS));
     }
 
-    public Qarticle(PathMetadata metadata) {
+    public QArticle(PathMetadata metadata) {
         this(metadata, PathInits.getFor(metadata, INITS));
     }
 
-    public Qarticle(PathMetadata metadata, PathInits inits) {
-        this(article.class, metadata, inits);
+    public QArticle(PathMetadata metadata, PathInits inits) {
+        this(Article.class, metadata, inits);
     }
 
-    public Qarticle(Class<? extends article> type, PathMetadata metadata, PathInits inits) {
+    public QArticle(Class<? extends Article> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.userAccount = inits.isInitialized("userAccount") ? new QUserAccount(forProperty("userAccount")) : null;
+        this.member = inits.isInitialized("member") ? new QMember(forProperty("member")) : null;
     }
 
 }
