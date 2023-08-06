@@ -24,7 +24,7 @@ public class MemberService {
         this.passwordEncoder = passwordEncoder;
     }
     @Transactional
-    public void createMember(MemberForm memberForm) {
+    public Long createMember(MemberForm memberForm) {
         // MemberForm으로부터 필요한 정보 추출하여 Member 엔티티 생성
         Member member = new Member();
         member.setEmail(memberForm.getEmail());
@@ -33,7 +33,7 @@ public class MemberService {
         validatePassword(member);
         // Member 엔티티 저장
         memberRepository.save(member);
-
+        return member.getId();
     }
 
 

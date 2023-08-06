@@ -1,9 +1,6 @@
 package com.wanted.wantedpreonboardingbackend.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -15,6 +12,7 @@ import javax.persistence.*;
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name ="article_id")
     private long id;
 
     @Setter
@@ -30,12 +28,11 @@ public class Article {
     @Column(name = "content", length = 10000)
     private String content; // 본문
 
+    @Builder
     private Article(Member member, String title, String content) {
         this.member = member;
         this.title = title;
         this.content = content;
     }
-    public static Article of(Member member, String title, String content) {
-        return new Article(member, title, content);
-    }
+
 }

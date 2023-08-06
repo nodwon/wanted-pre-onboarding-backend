@@ -11,7 +11,6 @@ import java.util.List;
 
 @Entity
 @Getter
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Member {
@@ -32,4 +31,11 @@ public class Member {
     @OneToMany(mappedBy = "member")
     private List<Article> articles = new ArrayList<>();
 
+    @Builder
+    public Member(String email, String password, List<Article> articles){
+        this.email = email;
+        this.password = password;
+        this.articles =articles;
+
+    }
 }
